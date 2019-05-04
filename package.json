@@ -1,0 +1,27 @@
+{
+  "name": "ts-fullstack-app-notable",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": "11.x",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "install": "npm run install:client && npm run install:server",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "cd server && npm run test",
+    "test:client": "cd client && npm run test",
+    "serve": "cd server && node build/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
